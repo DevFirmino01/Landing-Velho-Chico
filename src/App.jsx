@@ -226,7 +226,7 @@ function App() {
 
   const handleDownloadPdf = async () => {
     try {
-      const response = await fetch('http://localhost:5001/generate-pdf', {
+      const response = await fetch('https://8xhpiqce8x6k.manus.space/generate-pdf', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -239,7 +239,7 @@ function App() {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `roteiro_${formData.nome.replace(/ /g, '_')}.pdf`;
+        a.download = `roteiro_${formData.nome.replace(/ /g, '_')}.html`;
         document.body.appendChild(a);
         a.click();
         a.remove();
